@@ -57,4 +57,7 @@ PRIZE y BENEFIT usar Stubs.
         "accountType": 1
     }
     ```
-
+  ![Diagrama](images/screenshot1.png "Diagrama")
+#### RECOMENDACIONES
+Tener en cuenta buenas prácticas, código limpio, patrones de diseño según considere
+necesario.
