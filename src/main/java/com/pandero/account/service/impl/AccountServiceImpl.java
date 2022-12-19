@@ -16,45 +16,45 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Mono<Account> insert(Account account) {
-        return repository.save(account).map(a -> {
-            switch (a.getAccountType()){
-                case 1:
-                    // RUN SEND_EMAIL()
-                    break;
-                case 2:
-                    // RUN SEND_EMAIL()
-                    // RUN PRIZE()
-                    break;
-                case 3:
-                    // RUN SEND_EMAIL()
-                    // RUN PRIZE()
-                    // RUN BENEFIT()
-                    break;
-                default:
-                    break;
-            }
-            return a;
-        });
+        Account a = repository.save(account);
+        switch (a.getAccountType()){
+            case 1:
+                // RUN SEND_EMAIL()
+                break;
+            case 2:
+                // RUN SEND_EMAIL()
+                // RUN PRIZE()
+                break;
+            case 3:
+                // RUN SEND_EMAIL()
+                // RUN PRIZE()
+                // RUN BENEFIT()
+                break;
+            default:
+                break;
+        }
+        return Mono.just(a);
     }
 
     @Override
     public Mono<Account> update(Integer id, Account account) {
         account.setId(id);
-        return repository.save(account);
+        return Mono.just(repository.save(account));
     }
 
     @Override
     public Mono<Void> delete(Integer id) {
-        return repository.deleteById(id);
+        //return repository.deleteById(id);
+        return Mono.just(null);
     }
 
     @Override
     public Flux<Account> list() {
-        return repository.findAll();
+        return Flux.fromIterable(repository.findAll());
     }
 
     @Override
     public Mono<Account> get(Integer id) {
-        return repository.findById(id);
+        return Mono.just(repository.findById(id).orElse(new Account()));
     }
 }

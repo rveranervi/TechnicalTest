@@ -1,21 +1,34 @@
 package com.pandero.account.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
-@Data
+import javax.persistence.*;
+
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "account")
+@Getter
+@Setter
+@Entity
 public class Account {
-    @Id
+
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     Integer id;
+
+    @Column
     String username;
+
+    @Column
     String password;
+
+    @Column
     String email;
+
+    @Column
     String phoneNumber;
+
+    @Column
     Integer accountType;
 }
