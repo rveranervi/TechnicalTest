@@ -43,7 +43,7 @@ Al momento de crear una cuenta:
 - Las cuentas de tipo STANDARD y PREMIUM deben ser enviadas al microservicio
 PRIZE.
 - Solo las cuentas de tipo PREMIUM deben ser enviadas al microservicio BENEFIT.
-CONSIDERACIONES:
+<br><br><b>CONSIDERACIONES:</b>
 - Para la dependencia de componentes externos ya sea el MAIL, o los microservicios
 PRIZE y BENEFIT usar Stubs.
 - Considere usar una base de datos embebida, por ejemplo: H2 o HSQLDB.
