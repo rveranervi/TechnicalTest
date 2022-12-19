@@ -48,13 +48,13 @@ CONSIDERACIONES:
 PRIZE y BENEFIT usar Stubs.
 - Considere usar una base de datos embebida, por ejemplo: H2 o HSQLDB.
 - Para la creación de una cuenta considerar el siguiente JSON como ejemplo:
-```json
-{
-    "username": "username",
-    "password": "password",
-    "email": "email@email.com",
-    "phoneNumber" : 9999999999,
-    "accountType": 1
-}
-```
+    ```json
+    {
+        "username": "username",
+        "password": "password",
+        "email": "email@email.com",
+        "phoneNumber" : 9999999999,
+        "accountType": 1
+    }
+    ```
 
